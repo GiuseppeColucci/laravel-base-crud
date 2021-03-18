@@ -17,7 +17,7 @@ class CreateBeersTable extends Migration
             $table->id();
             $table->string('title', 255);
             $table->string('info', 255);
-            $table->float('price', 8, 2);
+            $table->float('price', 6, 2);
             $table->string('cover', 2048);
 
             $table->timestamps();
