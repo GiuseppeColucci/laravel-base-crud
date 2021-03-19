@@ -25,7 +25,7 @@ class Beer_2Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -36,7 +36,18 @@ class Beer_2Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $beer=new Beer();
+        $beer->title=$data['title'];
+        $beer->info=$data['info'];
+        $beer->price=$data['price'];
+        $beer->cover=$data['cover'];
+        $beer->save();
+
+        $user = Beer::orderBy('id', 'desc')->first();
+        return redirect()->route('beers.show', $user);
+
     }
 
     /**
