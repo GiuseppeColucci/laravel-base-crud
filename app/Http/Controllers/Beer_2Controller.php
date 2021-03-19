@@ -45,9 +45,8 @@ class Beer_2Controller extends Controller
      * @param  int  $Beer
      * @return \Illuminate\Http\Response
      */
-    public function show($Beer)
+    public function show(Beer $Beer)
     {
-        $Beer=Beer::find($Beer);
         return view('show',compact('Beer'));
     }
 
