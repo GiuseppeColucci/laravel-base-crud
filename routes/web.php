@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'BeerController@index');//collegamento della root al controller
+// Route::get('/', 'BeerController@index');//collegamento della root al controller
 
 Route::resource('/beers','Beer_2Controller');//collegamento all crud (Beers)nome che scegliamo noi

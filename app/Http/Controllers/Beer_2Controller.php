@@ -14,8 +14,8 @@ class Beer_2Controller extends Controller
      */
     public function index()
     {
-        $Beers=Beer::all();
-        return view('home', compact('Beer'));
+        $beers=Beer::all();
+        return view('home', compact('beers'));
     }
 
     /**
@@ -69,7 +69,7 @@ class Beer_2Controller extends Controller
      */
     public function edit(Beer $Beer)
     {
-        dd($Beer);
+        return view('edit', compact('Beer'));
     }
 
     /**
@@ -93,7 +93,7 @@ class Beer_2Controller extends Controller
     public function destroy(Beer $Beer)
     {
 
-        // $Beer->delete();
-        // return redirect()->route('beers.index');
+        $Beer->delete();
+        return redirect()->route('beers.index');
     }
 }
