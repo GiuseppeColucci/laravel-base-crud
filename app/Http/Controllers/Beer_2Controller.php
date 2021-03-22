@@ -64,12 +64,12 @@ class Beer_2Controller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $Beer
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Beer $Beer)
     {
-        //
+        dd($Beer);
     }
 
     /**
@@ -87,11 +87,13 @@ class Beer_2Controller extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  $Beer
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Beer $Beer)
     {
-        //
+
+        // $Beer->delete();
+        // return redirect()->route('beers.index');
     }
 }
